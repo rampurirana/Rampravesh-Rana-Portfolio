@@ -85,6 +85,22 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
 });
 
+/* EDUCATION FILTER */
+const eduTabs = document.querySelectorAll('.edu-tab');
+const eduCards = document.querySelectorAll('.edu-card');
+
+eduTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        eduTabs.forEach(item => item.classList.remove('active'));
+        tab.classList.add('active');
+
+        const showAll = tab.dataset.degree === 'all';
+        eduCards.forEach(card => {
+            card.classList.toggle('active', showAll || card.dataset.degree === tab.dataset.degree);
+        });
+    });
+});
+
 /* CTA */
 function handleCTA() {
     const email = document.getElementById('ctaEmail').value.trim();

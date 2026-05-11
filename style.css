@@ -640,6 +640,100 @@ section{
     transition: width 1.2s cubic-bezier(.4,0,.2,1);
 }
 
+/* EDUCATION SECTION */
+.education{
+    background: var(--bg);
+}
+
+.education-tabs{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+}
+
+.edu-tab{
+    font-size: .9375rem;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 999px;
+    border: 1.5px solid var(--border);
+    background: var(--card);
+    color: var(--text2);
+    transition: all var(--transition);
+}
+
+.edu-tab.active,
+.edu-tab:hover{
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
+}
+
+.education-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.edu-card{
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: all var(--transition);
+    opacity: .6;
+    transform: translateY(10px);
+    display: none;
+}
+
+.edu-card.active{
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    border-color: var(--orange);
+    box-shadow: var(--shadow);
+}
+
+.edu-card-head{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+}
+
+.edu-card-head h3{
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.edu-card-head span{
+    color: var(--orange);
+    font-weight: 700;
+    font-size: .875rem;
+}
+
+.edu-school{
+    font-size: .95rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.edu-card p{
+    color: var(--text2);
+    line-height: 1.75;
+    font-size: .94rem;
+}
+
+@media(max-width:900px){
+    .education-cards{
+        grid-template-columns: 1fr;
+    }
+}
+
 /* SERVICES SECTION */
 .services{
     background: var(--bg);
