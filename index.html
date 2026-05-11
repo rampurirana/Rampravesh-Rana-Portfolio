@@ -388,6 +388,49 @@
         </div>
     </section>
 
-<script src="script.js"></script>
+    <!-- CONTACT SECTION -->
+    <section class="cta" id="contact">
+        <div class="cta-inner fade-up">
+            <div class="section-label">Get In Touch</div>
+            <h2>Let's Work Together</h2>
+            <p>Have a project in mind? I'd love to hear about it. Fill out the form below and let's start a conversation.</p>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="contactName" name="user_name" placeholder="Full Name *" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="contactEmail" name="user_email" placeholder="Email Address *" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="contactMessage" name="message" placeholder="Project Description *" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SUCCESS POPUP -->
+    <div class="success-popup" id="successPopup">
+        <div class="popup-content">
+            <div class="popup-icon">✓</div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+            <button class="popup-close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+    
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    
+    <script>
+    console.log('Initializing EmailJS...');
+    emailjs.init({
+        publicKey: 'ot2ul6S3s2Hs5vjOC',
+    });
+    console.log('EmailJS initialized');
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>

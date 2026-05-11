@@ -142,6 +142,80 @@ function handleCTA() {
     }, 3000);
 }
 
+/* CONTACT FORM */
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+
+    // Validation
+    let isValid = true;
+
+    if(!name) {
+        document.getElementById('contactName').style.borderColor = '#ef4444';
+        isValid = false;
+    } else {
+        document.getElementById('contactName').style.borderColor = '';
+    }
+
+    if(!email || !email.includes('@')) {
+        document.getElementById('contactEmail').style.borderColor = '#ef4444';
+        isValid = false;
+    } else {
+        document.getElementById('contactEmail').style.borderColor = '';
+    }
+
+    if(!message) {
+        document.getElementById('contactMessage').style.borderColor = '#ef4444';
+        isValid = false;
+    } else {
+        document.getElementById('contactMessage').style.borderColor = '';
+    }
+
+    if(!isValid) {
+        // Reset border colors after 2 seconds
+        setTimeout(() => {
+            document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(field => {
+                field.style.borderColor = '';
+            });
+        }, 2000);
+        return;
+    }
+
+    const templateParams = {
+        user_name: name,
+        user_email: email,
+        message: message
+    };
+
+    emailjs.sendForm('service_0nrzt12', 'template_j2lss2g', '#contactForm')
+    .then((result) => {
+        console.log('Email sent successfully!', result.text);
+        showSuccessPopup();
+        document.getElementById('contactForm').reset();
+    }, (error) => {
+        console.error('Email send failed:', error);
+        alert('Unable to send message. Please try again.');
+    });
+});
+
+function showSuccessPopup() {
+    const popup = document.getElementById('successPopup');
+    popup.classList.add('show');
+
+    // Auto close after 5 seconds
+    setTimeout(() => {
+        closePopup();
+    }, 5000);
+}
+
+function closePopup() {
+    const popup = document.getElementById('successPopup');
+    popup.classList.remove('show');
+}
+
 /* SMOOTH SCROLL OFFSET */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
