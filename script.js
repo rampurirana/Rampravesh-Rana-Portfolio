@@ -85,6 +85,29 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
 });
 
+/* PROJECT OVERLAY LINK REDIRECT */
+document.querySelectorAll('.project-overlay').forEach(overlay => {
+    overlay.style.cursor = 'pointer';
+    overlay.addEventListener('click', (e) => {
+        e.preventDefault();
+        const projectLink = overlay.closest('.project-card').dataset.link;
+        if(projectLink && projectLink !== '#') {
+            window.open(projectLink, '_blank');
+        }
+    });
+});
+
+/* PROJECT LINK REDIRECT */
+document.querySelectorAll('.project-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const projectLink = link.closest('.project-card').dataset.link;
+        if(projectLink && projectLink !== '#') {
+            window.open(projectLink, '_blank');
+        }
+    });
+});
+
 /* EDUCATION FILTER */
 const eduTabs = document.querySelectorAll('.edu-tab');
 const eduCards = document.querySelectorAll('.edu-card');
