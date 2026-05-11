@@ -970,6 +970,33 @@ section{
     transform: scale(1.1) translateY(0);
 }
 
+/* FEEFBACK SECTION */
+.testimonials{background:var(--bg)}
+.testimonials-track{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.testi-card{
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:var(--radius);padding:28px;
+  transition:all var(--transition);
+}
+.testi-card:hover{border-color:var(--orange);box-shadow:0 8px 32px rgba(255,107,0,.12)}
+.testi-card.featured{
+  border-color:var(--orange);background:var(--card);
+  box-shadow:0 8px 40px rgba(255,107,0,.15);
+}
+.testi-stars{display:flex;gap:3px;color:var(--orange);font-size:.85rem;margin-bottom:14px}
+.testi-text{font-size:.9rem;color:var(--text2);line-height:1.7;margin-bottom:20px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{
+  width:44px;height:44px;border-radius:50%;overflow:hidden;
+  background:var(--orange-dim);border:2px solid var(--orange);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-weight:700;color:var(--orange);font-size:1rem;
+}
+.testi-name{font-size:.9375rem;font-weight:700}
+.testi-role{font-size:.8rem;color:var(--text3)}
+
 /* RESPONSIVE */
 @media(max-width:1024px){
     .services-grid{
