@@ -1,6 +1,6 @@
 # Rampravesh Rana - Portfolio Website
 
-![Portfolio Preview](image/Portfolio.png)
+![Portfolio Preview](image/Preview.png)
 
 A modern, responsive portfolio website showcasing my skills as a Java Backend & App Developer. Built with clean HTML, CSS, and JavaScript featuring dark/light theme toggle and smooth animations.
 
