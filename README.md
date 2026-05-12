@@ -105,6 +105,7 @@ Then visit `http://localhost:8000` (or the port shown in your terminal)
 
 ## 📁 Project Structure
 
+```
 Rampravesh-Rana-Portfolio/
 │
 ├── index.html          # Main HTML file
@@ -120,6 +121,7 @@ Rampravesh-Rana-Portfolio/
 │   └── Progress.png           # In progress project
 │
 └── README.md           # This file
+```
 
 ### Contact Form Setup
 The contact form uses EmailJS. To set it up:
